@@ -1,0 +1,16 @@
+# Global configuration for the API Discovery System
+
+search:
+  default_query_limit: 5
+  domains_base_dir: "domains"  # relative path to domain folders
+  queries_filename: "queries.yaml"
+  allow_duplicates: false  # future toggle if needed
+  max_results_per_query: 5
+  global_result_cap: 15
+  allowed_domain_keywords: ["weather", "developer", "docs", "api"]
+  blocked_domain_keywords: ["rapidapi", "forum", "blogspot"]
+  max_results_per_query: 5
+  global_result_cap: 15
+  allowed_domain_keywords: ["weather", "developer", "docs", "api"]
+  blocked_domain_keywords: ["rapidapi", "forum", "blogspot"]
+

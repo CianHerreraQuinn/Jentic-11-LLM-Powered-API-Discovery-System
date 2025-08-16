@@ -1,0 +1,8 @@
+# Placeholder for future weather-domain specific settings.
+# Example future fields:
+# rate_limit_notes: |-
+#   Many free weather APIs limit calls per minute; capture when parsing.
+# auth_schemes:
+#   - apiKey
+domain: weather
+version: 0.1.0

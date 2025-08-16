@@ -1,0 +1,15 @@
+[project]
+name = "jentic-api-discovery"
+version = "0.0.1"
+description = "LLM-powered API discovery system (MVP)"
+requires-python = ">=3.10"
+dependencies = [
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.2"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,8 @@
+# Curated search queries for the 'weather' domain (MVP)
+# Limit: 5 queries. Order matters (higher priority first).
+queries:
+  - "weather API with free API key"
+  - "how to request API key for weather API"
+  - "weather data API key signup"
+  - "weather REST API documentation key"
+  - "current weather API authentication"

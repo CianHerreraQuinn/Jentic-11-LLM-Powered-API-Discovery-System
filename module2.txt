@@ -1,0 +1,25 @@
+Next up is Module 2: API Source Discovery (a.k.a. Web Search & Initial Result Curation).
+
+Checklist for this module:
+
+Define abstractions:
+SearchProvider protocol (search(query) -> list[SearchResult])
+SearchResult dataclass (title, url, snippet, rank, source)
+Implement a placeholder provider:
+DummySearchProvider (returns canned results for now) OR interface to a real provider later (Bing, SerpAPI, etc.)
+Orchestration service:
+DiscoveryEngine that takes queries (from current Search Strategy) and aggregates, normalizes, de-duplicates, ranks.
+Basic ranking & filtering:
+Prefer official domains (heuristic: contains words like docs, developer, api + not aggregator like rapidapi unless desired)
+De-duplication by normalized URL (strip tracking params)
+Config additions:
+Max results per query
+Global cap on total results per domain run
+Allowed / blocked domain patterns (future-proof)
+Output structure:
+Write raw findings to apis/_discovery/<timestamp or run-id>.json
+(Later modules will parse individual provider pages)
+(Optional now) Light test or smoke script:
+Since you said enough testing, keep one minimalist test or a CLI script scripts/discover.py to print aggregated results.
+Update README with new module status and usage instructions.
+(If time) Add TODO hooks for future: HTML fetcher, rate limiting, retry/backoff.
