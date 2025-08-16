@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install .[dev] || true
+      - name: Run tests
+        run: pytest -q
+      - name: Upload artifact (discovery outputs) if exists
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: discovery-artifacts-${{ matrix.python-version }}
+          path: apis/_discovery
+          if-no-files-found: ignore

@@ -1,5 +1,7 @@
 ## Jentic API Discovery System (MVP)
 
+![CI](https://github.com/CianHerreraQuinn/Jentic-11-LLM-Powered-API-Discovery-System/actions/workflows/ci.yml/badge.svg)
+
 Initial MVP focused on discovering weather APIs and their key acquisition steps. The codebase is deliberately modular to enable future domain expansion (finance, sports, news, etc.) with minimal code changes.
 
 ### Current Scope (Modules Implemented)
@@ -60,7 +62,7 @@ Test-Driven Development (TDD) is used where logic is deterministic (e.g., query 
 - Sanitization of external content before LLM prompting.
 
 ### License
-TBD (add preferred license file).
+Licensed under the MIT License (see `LICENSE`).
 
 ### Contributing
 Early stage. Keep modules small, pure, and covered by tests. Avoid coupling domain-specific logic into shared modules.
